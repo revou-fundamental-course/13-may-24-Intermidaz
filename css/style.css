@@ -1,9 +1,9 @@
-.result {
-    margin-top: 10px;
-}
-
 body {
     background-color: beige;
+}
+
+.result {
+    margin-top: 10px;
 }
 
 .card {
@@ -15,4 +15,69 @@ body {
     background-color: #fff;
     max-width: 600px;
 }
-    
+
+.welcome {
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+    /* background-color: bisque; */
+    border-radius: 3px;
+    max-width: 100%;
+}
+
+.section-segitiga {
+    margin: 2px;
+    padding: 2px;
+    background-color: bisque;
+    text-align: center;
+}
+
+.section-jajar-genjang {
+    color: blue;
+    text-align: center;
+}
+
+.shape-title {
+    /* margin: 2px; */
+    padding-top: 1px;
+    padding-bottom: 15px;
+    text-align: center;
+    border-radius: 3px;
+    background-color: bisque;
+}
+
+#formula-section img {
+    display: block;
+    margin: 0 auto;
+}
+
+.rumus {
+    text-align: center;
+}
+
+.input input {
+    display: block;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+button {
+    border: 3px;
+    box-shadow: 0 2px 4px;
+}
+
+button:hover {background-color: #ccc;}
+
+#button-hitung {
+    display: block;
+    margin: 0 auto;
+    /* background-color: bisque; */
+}
+
+#button-reset {
+    display: block;
+    margin-left: auto;
+    justify-self: end;
+    background-color: orangered;
+    color: white;
+}

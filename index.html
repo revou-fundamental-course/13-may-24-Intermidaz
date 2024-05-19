@@ -9,21 +9,23 @@
 </head>
 <body>
     <div class="card">
-        <header>
+        <header class="welcome">
             <h1>Welcome!</h1>
             <section>
                 <p>To my simple website to calculate an area of triangle and circumference of triangle</p>
             </section>
         </header>
 
-        <section>
-            <div>
-                <h3 class="section-segitiga">Segitiga</h3>
-            </div>
-            <div>
-                <h3 class="section-jajar-genjang"><u>Jajar Genjang</u></h3>
-            </div>
-            <div>
+        <section class="shape-type">
+            <section class="shape">
+                <div class="section-segitiga">
+                    <h3>Segitiga</h3>
+                </div>
+                <div class="section-jajar-genjang">
+                    <h3><u>Jajar Genjang</u></h3>
+                </div>
+            </section>
+            <div class="shape-title">
                 <h1 id="title-segitiga">Luas Segitiga</h1>
                 <button type="button" id="toggle-button" onclick="toggleFormula()">Switch to Keliling</button>
             </div>
@@ -33,7 +35,7 @@
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMIm7LtaLKGRtZ9EmSQYOws3F3_neUbuv6C_lnhcltzQ&s" alt="segitiga">
             <section>
                 <p>Rumus Luas Segitiga yaitu:</p>
-                <p><b>L = 1/2 x a x t</b></p>
+                <p class="rumus"><b>L = 1/2 x a x t</b></p>
                 <div>
                     <p>Dimana :</p>
                     <p>L = Luas</p>
@@ -46,11 +48,13 @@
         <h2 id="formula-title">Hitung Luas Segitiga</h2>
         <section id="input-section">
             <div>
-                <form action="">
+                <form class="input">
                     <input type="text" placeholder="Nilai Alas" id="nilai-alas" >
                     <input type="text" placeholder="Nilai Tinggi" id="nilai-tinggi">
                     <input type="text" placeholder="Nilai Sisi s2" id="nilai-sisi" style="display: none;">
                 </form>
+            </div>
+            <div>
                 <button type="button" id="button-hitung" onclick=hitungLuas()>Hitung</button>
                 <div id="result" class="result"></div> <!-- Here's the result -->
                 <button type="button" id="button-reset" onclick=resetInput()>Reset</button>

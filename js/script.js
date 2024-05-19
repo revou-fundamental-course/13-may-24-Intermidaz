@@ -45,7 +45,7 @@ function toggleFormula() {
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMIm7LtaLKGRtZ9EmSQYOws3F3_neUbuv6C_lnhcltzQ&s" alt="segitiga">
             <section>
                 <p>Rumus Keliling Segitiga yaitu:</p>
-                <p><b>K = a + s1 + s2</b></p>
+                <p  class="rumus"><b>K = a + s1 + s2</b></p>
                 <div>
                     <p>Dimana :</p>
                     <p>K = Keliling</p>
@@ -55,18 +55,20 @@ function toggleFormula() {
         `;
         formulaTitle.innerHTML = `Hitung Keliling Segitiga`;
         inputSection.innerHTML = `
+        <section id="input-section">
             <div>
-                <form action="">
-                    <input type="text" placeholder="Nilai A" id="nilai-alas">
+                <form class="input">
+                    <input type="text" placeholder="Nilai a" id="nilai-alas">
                     <input type="text" placeholder="Nilai s1" id="nilai-tinggi">
                     <input type="text" placeholder="Nilai s2" id="nilai-sisi">
                 </form>
             </div>
-            <button type="button" id="button-hitung" onclick="hitungArea()">Hitung</button>
-            <div id="result">
-                <!-- Here's the result -->
+            <div>
+                <button type="button" id="button-hitung" onclick=hitungArea()>Hitung</button>
+                <div id="result" class="result"></div> <!-- Here's the result -->
+                <button type="button" id="button-reset" onclick=resetInput()>Reset</button>
             </div>
-            <button type="button" id="button-reset" onclick="resetInput()">Reset</button>
+        </section>
         `;
         
     } else {
@@ -76,7 +78,7 @@ function toggleFormula() {
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMIm7LtaLKGRtZ9EmSQYOws3F3_neUbuv6C_lnhcltzQ&s" alt="segitiga">
             <section>
                 <p>Rumus Luas Segitiga yaitu:</p>
-                <p><b>L = 1/2 x a x t</b></p>
+                <p  class="rumus"><b>L = 1/2 x a x t</b></p>
                 <div>
                     <p>Dimana :</p>
                     <p>L = Luas</p>
@@ -87,17 +89,20 @@ function toggleFormula() {
         `;
         formulaTitle.innerHTML = `Hitung Luas Segitiga`;
         inputSection.innerHTML = `
-        <div>
-            <form action="">
-                <input type="text" placeholder="Nilai Alas" id="nilai-alas">
-                <input type="text" placeholder="Nilai Tinggi" id="nilai-tinggi">
-            </form>
-        </div>
-        <button type="button" id="button-hitung" onclick="hitungLuas()">Hitung</button>
-        <div id="result">
-                <!-- Here's the result -->
+        <section id="input-section">
+            <div>
+                <form class="input">
+                    <input type="text" placeholder="Nilai Alas" id="nilai-alas" >
+                    <input type="text" placeholder="Nilai Tinggi" id="nilai-tinggi">
+                    <input type="text" placeholder="Nilai Sisi s2" id="nilai-sisi" style="display: none;">
+                </form>
             </div>
-        <button type="button" id="button-reset" onclick="resetInput()">Reset</button>
+            <div>
+                <button type="button" id="button-hitung" onclick=hitungLuas()>Hitung</button>
+                <div id="result" class="result"></div> <!-- Here's the result -->
+                <button type="button" id="button-reset" onclick=resetInput()>Reset</button>
+            </div>
+        </section>
         `;
     }
 
