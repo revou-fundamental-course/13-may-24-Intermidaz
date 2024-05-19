@@ -1,1 +1,7 @@
 /* CSS Styling */
+.section-segitiga {
+    text-align: center;
+    background-color: aquamarine;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
