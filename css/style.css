@@ -1,7 +1,18 @@
-/* CSS Styling */
-.section-segitiga {
-    text-align: center;
-    background-color: aquamarine;
-    padding-top: 2px;
-    padding-bottom: 2px;
+.result {
+    margin-top: 10px;
 }
+
+body {
+    background-color: beige;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    max-width: 600px;
+}
+    

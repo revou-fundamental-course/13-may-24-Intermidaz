@@ -8,42 +8,69 @@ function hitungLuas() {
     }
 
     const luas = (alas * tinggi) / 2;
-    alert(`Nilai Luas Segitiga adalah ${luas}`);
+    const result = document.getElementById('result');
+    result.innerHTML = `L = 1/2 x a x t <br> L = 1/2 x ${alas} x ${tinggi} <br> L = ${luas}`
+    // alert(`Nilai Luas Segitiga adalah ${luas}`);
+}
+
+function hitungArea() {
+    const alas = parseFloat(document.getElementById('nilai-alas').value);
+    const s1 = parseFloat(document.getElementById('nilai-tinggi').value);
+    const s2 = parseFloat(document.getElementById('nilai-sisi').value);
+
+    if(isNaN(alas) || isNaN(s1) || isNaN(s2)) {
+        alert("Please input a valid number");
+        return;
+    }
+
+    const keliling = (alas + s1 + s2);
+    const result = document.getElementById('result');
+    result.innerHTML = `K = a + s1 + s2 <br> K = ${alas} + ${s1} + ${s2} <br> K = ${keliling}`
+    // alert(`Nilai Keliling Segitiga adalah ${keliling}`) 
 }
 
 let isArea = true;
-// function toggleFormula() {
-//     const button = document.getElementById('toggle-button');
-//     if(isArea) {
-//         button.innerHTML = 'Switch to Luas';
-//     }
-//     else {
-//         button.innerHTML = 'Switch to Keliling';
-//     }
-//     isArea = !isArea;
-// }
-
 function toggleFormula() {
-    console.log('the code run');
+    // console.log('the code run');
+    const title = document.getElementById('title-segitiga');
     const button = document.getElementById('toggle-button');
     const formulaSection = document.getElementById('formula-section');
+    const formulaTitle = document.getElementById('formula-title');
+    const inputSection = document.getElementById('input-section');
 
     if(isArea) {
+        title.innerHTML = 'Keliling Segitiga'
         button.innerHTML = '<u>Switch to Luas</u>';
         formulaSection.innerHTML = `
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMIm7LtaLKGRtZ9EmSQYOws3F3_neUbuv6C_lnhcltzQ&s" alt="segitiga">
             <section>
                 <p>Rumus Keliling Segitiga yaitu:</p>
-                <p><b>K = a + b + c</b></p>
+                <p><b>K = a + s1 + s2</b></p>
                 <div>
                     <p>Dimana :</p>
                     <p>K = Keliling</p>
-                    <p>a, b, c = Sisi-sisi segitiga</p>
+                    <p>a, s1, s2 = Sisi-sisi segitiga</p>
                 </div>
             </section>
         `;
+        formulaTitle.innerHTML = `Hitung Keliling Segitiga`;
+        inputSection.innerHTML = `
+            <div>
+                <form action="">
+                    <input type="text" placeholder="Nilai A" id="nilai-alas">
+                    <input type="text" placeholder="Nilai s1" id="nilai-tinggi">
+                    <input type="text" placeholder="Nilai s2" id="nilai-sisi">
+                </form>
+            </div>
+            <button type="button" id="button-hitung" onclick="hitungArea()">Hitung</button>
+            <div id="result">
+                <!-- Here's the result -->
+            </div>
+            <button type="button" id="button-reset" onclick="resetInput()">Reset</button>
+        `;
         
     } else {
+        title.innerHTML = 'Luas Segitiga'
         button.innerHTML = '<u>Switch to Keliling</u>';
         formulaSection.innerHTML = `
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMIm7LtaLKGRtZ9EmSQYOws3F3_neUbuv6C_lnhcltzQ&s" alt="segitiga">
@@ -58,6 +85,20 @@ function toggleFormula() {
                 </div>
             </section>
         `;
+        formulaTitle.innerHTML = `Hitung Luas Segitiga`;
+        inputSection.innerHTML = `
+        <div>
+            <form action="">
+                <input type="text" placeholder="Nilai Alas" id="nilai-alas">
+                <input type="text" placeholder="Nilai Tinggi" id="nilai-tinggi">
+            </form>
+        </div>
+        <button type="button" id="button-hitung" onclick="hitungLuas()">Hitung</button>
+        <div id="result">
+                <!-- Here's the result -->
+            </div>
+        <button type="button" id="button-reset" onclick="resetInput()">Reset</button>
+        `;
     }
 
     isArea = !isArea;
@@ -66,4 +107,12 @@ function toggleFormula() {
 function resetInput() {
     document.getElementById('nilai-alas').value = "";
     document.getElementById('nilai-tinggi').value = "";
+    const nilaiSisi = document.getElementById('nilai-sisi');
+    if (nilaiSisi) {
+        nilaiSisi.value = "";
+    }
+    const result = document.getElementById('result');
+    if (result) {
+        result.innerHTML = "";
+    }
 }

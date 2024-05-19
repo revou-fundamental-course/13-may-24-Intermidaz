@@ -5,50 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator Segitiga</title>
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
-    <header>
-        <h1>Welcome!</h1>
+    <div class="card">
+        <header>
+            <h1>Welcome!</h1>
+            <section>
+                <p>To my simple website to calculate an area of triangle and circumference of triangle</p>
+            </section>
+        </header>
+
         <section>
-            <p>To my simple website to calculate an area of triangle and circumference of triangle</p>
-        </section>
-    </header>
-
-    <section>
-        <div class="section-segitiga">
-            <h2>Segitiga</h2>
-        </div>
-
-        <div>
-            <button type="button" id="toggle-button" onclick="toggleFormula()">Switch to Keliling</button>
-        </div>
-    </section>
-
-    <section id="formula-section">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMIm7LtaLKGRtZ9EmSQYOws3F3_neUbuv6C_lnhcltzQ&s" alt="segitiga">
-        <section>
-            <p>Rumus Luas Segitiga yaitu:</p>
-            <p><b>L = 1/2 x a x t</b></p>
             <div>
-                <p>Dimana :</p>
-                <p>L = Luas</p>
-                <p>a = Alas</p>
-                <p>t = Tinggi</p>
+                <h3 class="section-segitiga">Segitiga</h3>
+            </div>
+            <div>
+                <h3 class="section-jajar-genjang"><u>Jajar Genjang</u></h3>
+            </div>
+            <div>
+                <h1 id="title-segitiga">Luas Segitiga</h1>
+                <button type="button" id="toggle-button" onclick="toggleFormula()">Switch to Keliling</button>
             </div>
         </section>
-    </section>
-    <hr>
-    <h2 id="formula-title">Hitung Luas Segitiga</h2>
-    <section id="input-section">
-        <div>
-            <form action="">
-                <input type="text" placeholder="Nilai Alas" id="nilai-alas" >
-                <input type="text" placeholder="Nilai Tinggi" id="nilai-tinggi" >
-            </form>
-            <button type="button" id="button-hitung" onclick=hitungLuas()>Hitung</button>
-        </div>
-    </section>
-    <button type="button" id="button-reset" onclick=resetInput()>Reset</button>
+
+        <section id="formula-section">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMIm7LtaLKGRtZ9EmSQYOws3F3_neUbuv6C_lnhcltzQ&s" alt="segitiga">
+            <section>
+                <p>Rumus Luas Segitiga yaitu:</p>
+                <p><b>L = 1/2 x a x t</b></p>
+                <div>
+                    <p>Dimana :</p>
+                    <p>L = Luas</p>
+                    <p>a = Alas</p>
+                    <p>t = Tinggi</p>
+                </div>
+            </section>
+        </section>
+        <hr>
+        <h2 id="formula-title">Hitung Luas Segitiga</h2>
+        <section id="input-section">
+            <div>
+                <form action="">
+                    <input type="text" placeholder="Nilai Alas" id="nilai-alas" >
+                    <input type="text" placeholder="Nilai Tinggi" id="nilai-tinggi">
+                    <input type="text" placeholder="Nilai Sisi s2" id="nilai-sisi" style="display: none;">
+                </form>
+                <button type="button" id="button-hitung" onclick=hitungLuas()>Hitung</button>
+                <div id="result" class="result"></div> <!-- Here's the result -->
+                <button type="button" id="button-reset" onclick=resetInput()>Reset</button>
+            </div>
+        </section>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>
